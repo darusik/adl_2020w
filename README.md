@@ -8,7 +8,7 @@ At present, due to the safety measures, people are supposed to wear masks almost
 
 ![Artificial data](/images/introduction/masks.png)
 
-Thereby, there are two ways to improve presented results: either implement a new face recognition algorithm that will overperform existing ones or create a more realistic dataset, which can help current approaches to make more precise predictions. 
+Thereby, there are two ways to improve presented results: either implement a new face recognition algorithm that will outperform existing ones or create a more realistic dataset, which can help current approaches to make more precise predictions. 
 Since data collection is always the initial step of solving any Deep Learning problem, we focus our attention on proper dataset creation.
 
 
@@ -64,7 +64,7 @@ Another possibility is to use the results of [this](https://www.cc.gatech.edu/~h
 #### Drawbacks: 
 - training a GAN can be a very complicated task;
 - in case of bad training GAN can produce not realistic images;
-- the detailing of images can be worse than in the previous method, especially for high-resolution data;
+- the level of detail can be worse than in the previous method, especially for high-resolution data;
 #### Benefits:
 - relatively fast and cheap method;
 - can generate more realistic images than the previous approach.
@@ -82,3 +82,5 @@ The first and the second approaches are too time-consuming, however, we may also
 [6]: https://arxiv.org/abs/1803.07835 "Joint 3D Face Reconstruction and Dense Alignment with Position Map Regression Network"
 [7]: https://arxiv.org/abs/1703.07834 "Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric CNN Regression"
 [8]: https://arxiv.org/abs/1512.09300 "Autoencoding beyond pixels using a learned similarity metric"
+
+
