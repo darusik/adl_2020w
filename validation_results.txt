@@ -1,0 +1,23 @@
+baseline:
+    Accuracy: 0.99550+-0.00342
+    Validation rate: 0.98600+-0.00975 @ FAR=0.00100
+    Area Under Curve (AUC): 1.000
+    Equal Error Rate (EER): 0.004
+
+mask first:
+    Accuracy: 0.96617+-0.01019
+    Validation rate: 0.71867+-0.03484 @ FAR=0.00133
+    Area Under Curve (AUC): 0.993
+    Equal Error Rate (EER): 0.034
+
+mask second:
+    Accuracy: 0.96833+-0.00980
+    Validation rate: 0.83800+-0.03452 @ FAR=0.00167
+    Area Under Curve (AUC): 0.994
+    Equal Error Rate (EER): 0.031
+
+mask both:
+    Accuracy: 0.96383+-0.00753
+    Validation rate: 0.81567+-0.02206 @ FAR=0.00133
+    Area Under Curve (AUC): 0.993
+    Equal Error Rate (EER): 0.037
