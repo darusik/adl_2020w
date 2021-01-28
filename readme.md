@@ -84,15 +84,17 @@ The main steps of dataset creation together with time consumption:
   2. Creating configurations for model evaluation in 4 different settings (1 hour).
   3. Summary writing (6 hours).
 
-## Instructions for reproducing
+## Instructions for running demo
+
+1. Clone this repository. 
+2. Follow the instructions from [demo/readme.md](demo/readme.md).
+
+
+## Instructions for reproducing re-identification evaluation
 
   1. Install all required packages from the [requirements.txt](requirements.txt).
   2. Clone [3DDFA_V2](https://github.com/cleardusk/3DDFA_V2) repository and merge it with the `3DDFA_V2` directory of this project.
-
-     As a result, you should have three additional files (`Mask-Demo.ipynb`, `Mask-Generator.ipynb`, `Mask-Utils.ipynb`) in `3DDFA_V2` and one additional file (`mb1_120x120.onnx`) in `3DDFA_V2/weights`.
-  3. To process a single image you can run `Mask-Demo.ipynb`.
-
-     This demo demonstrates all algorithm steps in detail.
+  
   4. To reproduce dataset generation and the model evaluation - firstly, clone [fecenet](https://github.com/davidsandberg/facenet) repository and merge it with corresponding directory of this project.
 
      As a result you should have three additional files (`pairs_mask_both.txt`, `pairs_mask_first.txt`, `pairs_mask_second.txt`) in `facenet/data`.
@@ -107,6 +109,12 @@ The main steps of dataset creation together with time consumption:
      And then unzip the obtained archive.
   6. Generate the dataset with masks by running `Mask-Generator.ipynb`, or use the already generated as described above.
   7. Run step 6 from [here](https://github.com/davidsandberg/facenet/wiki/Validate-on-lfw) with additional parameter `lfw_pairs="data/pairs_mask_first.txt"` to get the model evaluation on pairs "mask - no mask". You can also set this parameter to be equal either `"pairs_mask_both.txt"`, or `"pairs_mask_second.txt"` to get evaluation on "mask - mask" or "no mask - mask" pairs correspondingly. The results should be similar to the [validation_results.txt](validation_results.txt).
+
+
+## Instructions for training baseline model
+1. Make sure that all packages from the [requirements.txt](requirements.txt) are installed.
+2. Check that the dataset is located in '~/datasets/lfw/lfw_mtcnnpy_160'.
+3. Run classifier.py to train a model.
 
 ## Discussion
 We created a solution for covering humans faces with masks and creating a dataset for face re-identification. Comparing to [this](https://doi.org/10.6028/NIST.IR.8311) paper, where authors just covered faces with a solid color, we took into account the 3D face shape, pose, and image lightning, which makes our approach more realistic. Unfortunately, we were not able to compare the performance of the models used in that research, since the models were not publicly available.
