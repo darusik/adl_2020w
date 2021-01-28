@@ -1,0 +1,8 @@
+version: '3'
+services:
+  demo:
+    build:
+      context: ../3DDFA_V2
+      dockerfile: ../demo/Dockerfile
+    ports:
+      - 8866:8866

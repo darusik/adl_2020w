@@ -1,0 +1,22 @@
+--- requirements.txt	2021-01-27 21:20:04.221141365 +0200
++++ requirements_new.txt	2021-01-27 21:22:46.195610363 +0200
+@@ -1,4 +1,4 @@
+-torch
++torch==1.5.1
+ torchvision
+ matplotlib
+ numpy
+@@ -8,7 +8,10 @@
+ pyyaml # yaml
+ tqdm
+ argparse
+-cython
++cython==0.29.21
+ scikit-image # skimage
+-scipy
++scipy==1.1.0
+ onnxruntime
++git+git://github.com/jrosebr1/color_transfer
++albumentations==0.5.2
++cnn-finetune==0.6.0
+\ No newline at end of file
