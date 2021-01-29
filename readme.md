@@ -1,4 +1,4 @@
-# Mask re-identification dataset
+# Mask re-identification and mask detection dataset
 
 This repository provides a code for creating a dataset of people wearing masks for re-identification by "covering" existing face images with masks using a 3D Face Reconstruction technology.
 In addition, we evaluated an existing re-identification model on obtained dataset and compared the results with the one observed on the original test set.
@@ -84,10 +84,25 @@ The main steps of dataset creation together with time consumption:
   2. Creating configurations for model evaluation in 4 different settings (1 hour).
   3. Summary writing (6 hours).
 
-## Instructions for running demo
+## Mask detection
+
+Additionaly, we considered a problem of detection face masks. More precisely, we trained a binary classisier to check if a person is wearing a mask.
+
+1. Data preprocessing. 
+We used original LFW dataset and its copy covered with masks. Overall dataset consits of ~26k images. Since the size of the dataset is not that big, we used data augmentation using [albumentation](https://albumentations.ai/). The example of observed albumentated image is showed below:
+![](images/main/augmentation.png)
+
+2. Train and test a model.
+The baseline model is a ResNet18. It achieves 99.9% accuracy (5292/5294 correctly classified image).
+We also tried it on the real images from the Internet and it works well. The only case when it was fooled is when a person wae wearing a transparent mask. But since we do not have them among our masks, it is not suprisingly.
+
+## Instructions for running the demo
+
+The demo firstly detect if a person is wearing a mask. If the mask was not found, it put a random mask on a person.
 
 1. Clone this repository. 
 2. Follow the instructions from [demo/readme.md](demo/readme.md).
+
 
 
 ## Instructions for reproducing re-identification evaluation
